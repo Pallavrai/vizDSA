@@ -1,0 +1,19 @@
+[Unit]
+Description=vizDSA run API
+After=network-online.target docker.service
+Requires=docker.service
+
+[Service]
+User=vizdsa
+SupplementaryGroups=docker
+WorkingDirectory=/srv/vizdsa/current/repo
+Environment=NODE_ENV=production
+Environment=SANDBOX_RUNTIME=runsc
+# C++ stays refused until this is set. gdb does not work under gVisor, so it would run under runc,
+# which shares the host kernel. Read docs/experiments.md before enabling it on a public server.
+# Environment=SANDBOX_RUNTIME_CPP=runc
+ExecStart=/usr/bin/node apps/api/src/server.ts
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

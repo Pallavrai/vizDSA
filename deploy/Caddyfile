@@ -1,0 +1,14 @@
+# Replace with your domain.
+vizdsa.example.com {
+	encode gzip
+
+	handle /runs {
+		reverse_proxy 127.0.0.1:8787
+	}
+
+	handle {
+		root * /srv/vizdsa/current/web
+		try_files {path} /index.html
+		file_server
+	}
+}

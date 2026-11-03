@@ -1,0 +1,33 @@
+:root {
+  color-scheme: dark;
+  --ink: #0b0e13;
+  --panel: #11151c;
+  --panel-raised: #171c25;
+  --hairline: #262d39;
+  --hairline-strong: #3a4352;
+  --text: #e8ecf1;
+  --text-muted: #9aa6b6;
+
+  /* One meaning each, everywhere. Always paired with arrows, labels or borders, never colour alone. */
+  --read: #f5b83d;
+  --read-soft: rgba(245, 184, 61, 0.14);
+  --write: #2dd4bf;
+  --write-soft: rgba(45, 212, 191, 0.16);
+  --pointer: #a78bfa;
+  --pointer-soft: rgba(167, 139, 250, 0.22);
+  --error: #f87171;
+  --error-soft: rgba(248, 113, 113, 0.12);
+
+  --syntax-keyword: #c4a7ff;
+  --syntax-string: #a3e0a0;
+  --syntax-number: #f5b83d;
+  --syntax-function: #7dd3fc;
+  --syntax-type: #5eead4;
+  --selection: rgba(125, 211, 252, 0.22);
+  --line-current: rgba(45, 212, 191, 0.1);
+  --line-error: rgba(248, 113, 113, 0.14);
+
+  --font-display: 'Bricolage Grotesque Variable', system-ui, sans-serif;
+  --font-body: 'Instrument Sans Variable', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+}

@@ -1,0 +1,15 @@
+{
+  "name": "@vizdsa/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "RUN_LIMITS=off SANDBOX_RUNTIME=runc SANDBOX_RUNTIME_CPP=runc node --watch src/server.ts",
+    "start": "node src/server.ts"
+  },
+  "dependencies": {
+    "@fastify/rate-limit": "^10.2.0",
+    "@vizdsa/trace": "*",
+    "fastify": "^5.2.0"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "vizdsa",
+  "private": true,
+  "author": "Pallav Rai",
+  "type": "module",
+  "engines": { "node": ">=22.18" },
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "npm run dev -w @vizdsa/api & npm run dev -w @vizdsa/web & wait",
+    "build": "npm run build -w @vizdsa/web",
+    "build:images": "docker build -t vizdsa-runner-python runners/python && docker build -t vizdsa-runner-java runners/java && docker build -t vizdsa-runner-cpp runners/cpp",
+    "test": "vitest run",
+    "test:conformance": "vitest run --config vitest.conformance.config.ts",
+    "test:e2e": "npm run test:e2e -w @vizdsa/web",
+    "lint": "eslint . && tsc --noEmit -p apps/api && tsc --noEmit -p apps/web"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/node": "^22.10.0",
+    "eslint": "^9.17.0",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.18.0",
+    "vitest": "^3.0.0"
+  }
+}
